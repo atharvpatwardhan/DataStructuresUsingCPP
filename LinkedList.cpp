@@ -75,17 +75,54 @@ public:
             }
         }
     }
+
+    type findMax(){
+        Node *ptr = begin;
+        int maxval = ptr->data;
+        Node *tmp = begin;
+        while(tmp!=NULL){
+            if(tmp->data > maxval){
+                maxval = tmp->data;
+            }
+            tmp = tmp->next;
+        }
+        cout<<"\n\n"<<maxval;
+
+    }
 };
 
 
 int main(){
     LinkedList<int> obj;
-    obj.insertBeg(10);
-    obj.insertBeg(20);
-    obj.insertBeg(30);
-    obj.insertEnd(40);
-    obj.search(30);
-    obj.traverse();
+    int ch,val;
+    while(true){
+        cout<<"\n\n\tStack Operations : (1.InsertBeg 2.InsertEnd 3.Traverse 4.Search Max value 5.Exit)";
+        cin>>ch;
+
+        switch(ch){
+        case 1:
+            cout<<"\n\tEnter value to add : ";
+            cin>>val;
+            obj.insertBeg(val);
+            break;
+        case 2:
+            cout<<"\n\tEnter value to add : ";
+            cin>>val;
+            obj.insertEnd(val);
+            break;
+        case 3:
+            obj.traverse();
+            break;
+        case 4:
+            obj.findMax();
+            break;
+        case 5:
+            exit(0);
+        }
+    }
+
     return 0;
 
 }
+
+
