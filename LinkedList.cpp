@@ -62,7 +62,7 @@ public:
             Node *ptr = begin;
 
             while(ptr!=NULL){
-                ptr++;
+                pos++;
                 if (ptr->data==val){
                     cout<<val<<" is present at "<<pos<<endl;
                     flag = 1;
